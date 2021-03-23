@@ -1,0 +1,101 @@
+html,
+body {
+    height: 95%;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    top: 0;
+    left: 0;
+
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.header div#left {
+    padding: 10px;
+}
+
+.header div#right {
+    padding: 10px;
+}
+
+.header a#logo,
+.header a#logo:visited {
+    text-decoration: none;
+    color: black;
+    font-size: 40px;
+}
+
+#planner {
+    width: 45vw;
+    height: 80vh;    
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#calender {
+    background-image: url(../art/March-2021-Calendar.jpg);
+    background-size: 850px 550px;
+    background-repeat: no-repeat;
+    height:70%;
+
+}
+
+#alerts {
+    height:30%;
+}
+
+#alerts ul{
+    padding-top: 5px;
+    padding-left: 24px;
+    padding-right: 38px;
+    margin: 0;
+    list-style-type: none;
+}
+
+#alerts ul li{
+    border: 2px solid;
+    border-radius: 15px;
+    height: 40px;
+    text-align: center;
+    font-size: 2em;
+}
+
+.warning {
+    background-color:  yellow;
+}
+
+.danger {
+    background-color: red;
+
+}
+
+#medication {
+    width: 45vw;
+    height: 80vh; 
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#cart{
+    background-color: grey;
+    background-size: 850px 550px;
+    background-repeat: no-repeat;
+    height:50%;
+}
+
+#list{
+    background-color: grey;
+    background-size: 850px 550px;
+    background-repeat: no-repeat;
+    height:50%;
+}
