@@ -1,0 +1,39 @@
+.body{
+  text-align: center;
+}
+
+.body a, .body a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+.title{
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.loginForm{
+  text-align: right;
+  margin: 0px auto;
+  font-size: 20px;
+}
+
+.textBox{
+  height: 20px;
+}
+
+#loginButton{
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#loginButton a{
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+}
