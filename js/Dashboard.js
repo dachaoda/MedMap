@@ -138,6 +138,13 @@ function clearAll(){
     document.getElementById("cart").innerHTML ='';
 }
 
+function takeAll(){
+    //send data to server
+    //refetch meditems 
+
+    clearAll();
+}
+
 function add(input) {
     var med = input.getAttribute("name");
     var mvalue = document.getElementById(med).getElementsByClassName("quantity")[0];
@@ -147,7 +154,7 @@ function add(input) {
     if (quan++ >= 10) {
         mvalue.setCustomValidity('Amount too large! Could cause safty concerns.');
         mvalue.reportValidity(false);
-        console.log(failed)
+        console.log("subtract failed successfully");
     }else{
         mvalue.setAttribute("value", quan);
     }
@@ -162,15 +169,10 @@ function minus(input) {
     if (quan-- < 1) {
         mvalue.setCustomValidity('Negative quantity are not allowed');
         mvalue.reportValidity(false);
-        console.log(failed)
+        console.log("minus failed successfully");
     }else{
         mvalue.setAttribute("value", quan);
     }
-}
-
-function addtoCart(input) {
-    var med = input.getAttribute("name");
-
 }
 
 

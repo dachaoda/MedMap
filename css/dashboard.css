@@ -34,12 +34,10 @@ body {
 }
 
 #planner {
-    width: 45vw;
+    width: 48vw;
     height: 80vh;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translateX(-50%) translateY(-50%);
+    margin-top: 10vh;
+
 }
 
 #planner a {
@@ -47,7 +45,6 @@ body {
 }
 
 #calender {
-    width: 850px;
     background-repeat: no-repeat;
     height:100%;
     
@@ -83,7 +80,7 @@ body {
 }
 
 #medication {
-    width: 45vw;
+    width: 48vw;
     height: 80vh;
     position: absolute;
     top: 50%;
@@ -255,7 +252,7 @@ body {
     float: left;
     list-style: none;
     color: black;
-    font-size: 25px;
+    font-size: 1.4em;
     font-weight: bold;
     padding: 0;
 }
@@ -263,7 +260,8 @@ body {
 #weekdays li {
     height: 14%;
     text-align: center;
-    line-height: 3em;
+    line-height: 4em;
+    border-top: 1px solid black;
 }
 
 #days{
@@ -278,6 +276,7 @@ body {
     font-weight: bold;
     padding: 0;
     float: left;
+    border-top: 1px solid black;
 }
 
 #days li{
