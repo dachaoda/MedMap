@@ -33,6 +33,14 @@
   width: 40px;
 }
 
+.header div#left {
+  padding-left: 10px;
+}
+
+#logo img{
+  width: 95px;
+}
+
 .form-descr{
   font-size: 17px;
   padding-bottom: 30px;
