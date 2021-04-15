@@ -1,18 +1,6 @@
-.header {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  top: 0;
-  left: 0;
-
-  border-bottom-style: solid;
-  border-width: 1px;
-
-  background-color: white;
+.header{
+  height: 68px;
 }
-
 
 .toolbar{
   position: absolute;
@@ -22,7 +10,7 @@
 
   top: 68px;
   left: 0px;
-  margin-top: 20px;
+
   border-bottom-style: solid;
   border-width: 1px;
 
@@ -33,14 +21,6 @@
 
 .toolbar div{
   padding: 10px;
-}
-
-.header div#left {
-  padding-left: 10px;
-}
-
-#logo img{
-  width: 95px;
 }
 
 .toolbar div a, .toolbar div a:visited{

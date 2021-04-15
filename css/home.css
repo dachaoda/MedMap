@@ -1,6 +1,6 @@
 .header div#right{
   padding: 10px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .header div#right a, .header div#right a:visited{
@@ -34,5 +34,3 @@
 
   overflow-y: auto;
 }
-
-

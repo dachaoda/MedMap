@@ -18,8 +18,8 @@ body {
     background-color: white;
 }
 
-.header div#left{
-    padding-left: 10px;
+.header div#left {
+    padding: 10px;
 }
 
 .header div#right {
@@ -34,20 +34,20 @@ body {
 }
 
 #planner {
-    width: 48vw;
+    width: 45vw;
     height: 80vh;
-    margin-top: 10vh;
-
-}
-
-#planner a {
-    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateX(-50%) translateY(-50%);
 }
 
 #calender {
+    background-image: url(../art/March-2021-Calendar.jpg);
+    background-size: 850px 550px;
     background-repeat: no-repeat;
-    height:100%;
-    
+    height:70%;
+
 }
 
 #alerts {
@@ -80,7 +80,7 @@ body {
 }
 
 #medication {
-    width: 48vw;
+    width: 45vw;
     height: 80vh;
     position: absolute;
     top: 50%;
@@ -88,62 +88,11 @@ body {
     transform: translateX(-50%) translateY(-50%);
 }
 
-#contenter{
+#cart{
     background-color: grey;
     background-size: 850px 550px;
     background-repeat: no-repeat;
     height:50%;
-    list-style: none;
-    overflow: scroll;
-}
-
-.meditem{
-    padding: 10px;
-    width: 85%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 25px;
-    background-color: lightgrey;
-    border: 1px solid black;
-}
-
-.meditem li {
-    float: left;
-
-}
-
-
-.cart{
-    padding: 10px;
-    width: 85%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 25px;
-    background-color: lightgrey;
-    border: 1px solid black;
-    
-}
-
-.cart li {
-    float: left;
-
-}
-
-.button{
-    float: right;
-}
-
-.button button{
-    float: left;
-    margin: 2px;
-}
-
-.quantity {
-    width: 40px;
-    float: left;
-    margin: 2px;
 }
 
 #list{
@@ -151,11 +100,6 @@ body {
     background-size: 850px 550px;
     background-repeat: no-repeat;
     height:50%;
-    overflow: scroll;
-}
-
-#list li{
-    list-style: none;
 }
 
 .menu div, .menu button{
@@ -202,95 +146,4 @@ body {
 
   font-size: 20px;
   font-weight: bold;
-}
-
-#logo img{
-    width: 95px;
-}
-
-#month{
-    width: 100%;
-    background: grey;
-    height: 15%;
-    text-align: center;
-}
-
-#month ul{
-    margin: 0;
-    padding: 0;
-}
-
-#month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1em;
-    list-style: none;
-}
-
-#month .prev{
-    float: left;
-    padding: 25px;
-}
-
-#month .next{
-    float: right;
-    padding: 25px;
-}
-
-#year{
-    padding: 20px;
-}
-
-#weekdays {
-    border-top: 1px solid black;
-    background-color: darkgrey;
-    margin: 0;
-    height: 85%;
-    width: 10%;
-    float: left;
-    list-style: none;
-    color: black;
-    font-size: 1.4em;
-    font-weight: bold;
-    padding: 0;
-}
-
-#weekdays li {
-    height: 14%;
-    text-align: center;
-    line-height: 4em;
-    border-top: 1px solid black;
-}
-
-#days{
-    background-color: lightgrey;
-    margin: 0;
-    height: 85%;
-    width: 90%;
-    float: left;
-    list-style: none;
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 0;
-    float: left;
-    border-top: 1px solid black;
-}
-
-#days li{
-    border-top: 1px solid black;
-    padding-left: 15px;
-    height: 14%;
-    line-height: 3em;
-}
-
-#search{
-    padding-left: 20px;
-    padding-top: 15px;
-}
-
-#search input{
-    width: 77%;
 }

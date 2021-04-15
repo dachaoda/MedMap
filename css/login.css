@@ -21,15 +21,11 @@
 
 .textBox{
   height: 20px;
-  border: 1px solid black;
 }
 
 #loginButton{
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 10px;
-  width: 80px;
-  height: 40px;
-  border-radius: 10px;
 }
 
 #loginButton a{
@@ -41,4 +37,3 @@
   border-color: grey;
   border-width: 1px;
 }
-

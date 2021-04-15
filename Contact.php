@@ -20,7 +20,7 @@
         <a href="Dashboard.html" id="back">Back</a>
       </div>
       <div id="right">
-        <button class="mButton" onclick="showMenu()"><i class="fas fa-angle-double-down"></i></button>
+        <button class="mButton" onclick="showMenu()">-</button>
       </div>
     </div>
     <div class="menu" id="menu">
@@ -30,7 +30,7 @@
       <div><a href="Setting.html">Settings</a></div>
       <div><a href="Contact.html">Support</a></div>
       <div><a href="Home.html">Logout</a></div>
-      <button onclick="hideMenu()"><i class="fas fa-angle-double-up"></i></button>
+      <button onclick="hideMenu()">X</button>
     </div>
   </body>
 
