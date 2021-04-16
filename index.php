@@ -11,10 +11,10 @@
       <div class="panel"><center><h1>ABOUT MEDMAP </br> AND </br> PREVIEWS</h1></center></div>
     </div>
     <div class="header">
-      <div id="left"><a href="index.html" id="logo"><img src="/art/MedMap_logo.png"></a></div>
+      <div id="left"><a href="Home.php" id="logo">MedMap</a></div>
       <div id="right">
-        <a href="Login.html" id="login">Login</a>
-        <a href="Register.html" id="register">Register</a>
+        <a href="Login.php" id="login">Login</a>
+        <a href="Register.php" id="register">Register</a>
       </div>
   </body>
 </html>

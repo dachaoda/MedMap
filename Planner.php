@@ -1,12 +1,19 @@
+<?php
+  if(isset($_GET['ID'])){
+    $id = $_GET['ID'];
+  }
+  else{
+    header("Location: index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Planner</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/planner.css">
+    <link rel="stylesheet" href="css/general.css">
 
 </head>
 
@@ -54,25 +61,34 @@
     </div>
 
     <div class="header">
-      <div id="left"><a href="Dashboard.html" id="logo"><img src="/art/MedMap_logo.png"></a></div>
+      <div id="left">
+        <form>
+          <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+          <button formaction="Dashboard.php" id="logo">MedMap</button>
+          <button formaction="Dashboard.php" id="back">Back</button>
+        </form>
+      </div>
 
         <div id="right">
             <!--<a href="dropdown.html">
               <img src="art/dropdown.png" height="40px">
             </a>-->
-            <button class="mButton" onclick="showMenu()"><i class="fas fa-angle-double-down"></i></button>
+            <button class="mButton" onclick="showMenu()">-</button>
         </div>
 
     </div>
 
     <div class="menu" id="menu">
-      <div><a href="Dashboard.html">Dashboard</a></div>
-      <div><a href="Planner.html">Planner</a></div>
-      <div><a href="Item.html">Items</a></div>
-      <div><a href="Setting.html">Settings</a></div>
-      <div><a href="Contact.html">Support</a></div>
-      <div><a href="Home.html">Logout</a></div>
-      <button onclick="hideMenu()"><i class="fas fa-angle-double-up"></i></button>
+      <form>
+        <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+        <div><button formaction="Dashboard.php">Dashboard</button></div>
+        <div><button formaction="Planner.php">Planner</button></div>
+        <div><button formaction="Item.php">Items</button></div>
+        <div><button formaction="Setting.php">Settings</button></div>
+        <div><button formaction="Contact.php">Support</button></div>
+        <div><a href="Home.php">Logout</a></div>
+      </form>
+      <button onclick="hideMenu()">X</button>
     </div>
 </body>
 

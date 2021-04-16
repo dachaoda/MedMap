@@ -25,25 +25,35 @@ html, body {
 }
 
 .header div#left{
-  padding-left: 10px;
+  padding: 10px;
 }
 
 .header div#right{
   padding: 10px;
 }
 
+.header div#left form button, .header div#left form button:visited{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+  background-color: white;
+}
+
 .header div#left a, .header div#left a:visited{
   text-decoration: none;
   color: black;
   font-size: 40px;
+  background-color: white;
 }
 
+.menu{
+  padding: 10px;
+}
 
-
-.menu div, .menu button{
+.menu form div, .menu button {
   font-size: 30px;
-  margin: 10px;
-  width: 150px;
+  margin: 0px;
+  width: 160px;
 
   background-color: white;
   border-style: solid;
@@ -51,7 +61,8 @@ html, body {
   border-width: 1px;
 }
 
-.menu div a, .menu div a:active{
+
+.menu form div button, .menu form div button:active, .menu form div a, .menu form div a:active{
   text-decoration: none;
   color: black;
 }
@@ -96,7 +107,3 @@ html, body {
 
   margin-left: 20px;
 }
-
-#logo img{
-  width: 95px;
-} 

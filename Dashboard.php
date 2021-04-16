@@ -1,118 +1,110 @@
+<?php
+  if(isset($_GET['ID'])){
+    $id = $_GET['ID'];
+  }
+  else{
+    header("Location: index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="css/dashboard.css?version=#">
 </head>
 
 <body>
     <div class="body">
-        <div id="planner">
+        <div id="planner" >
             <a href="planner.html">
-                <div id="calender">
-                    <div id="month">
-                        <ul>
-                            <li class="prev"></li>
-                            <li class="next"></li>
-                            <li id="year">August
-                                <br>
-                                <span style="font-size:18px">2021</span>
-                            </li>
-                          </ul>
-                    </div>
+            <div id="calender">
 
-                    <ul id="weekdays">
-                        <li>Mon</li>
-                        <li>Tue</li>
-                        <li>Wed</li>
-                        <li>Thu</li>
-                        <li>Fri</li>
-                        <li>Sat</li>
-                        <li>Sun</li>
-
-                    </ul>
-
-                    <ul id="days">
-                        <li id="0">0</li>
-                        <li id="1">1</li>
-                        <li id="2">2</li>
-                        <li id="3">3</li>
-                        <li id="4">4</li>
-                        <li id="5">5</li>
-                        <li id="6">6</li>
-                    </ul>
-
-                </div>
+            </div>
             </a>
+            <div id="alerts">
+                <ul>
+                    <li class="danger"> Alert! Lorem ipsum </li>
+                    <li class="warning">Reminder: Lorem ipsum </li>
+                    <li class="warning">Reminder: Lorem ipsum</li>
+                    <li class="warning">Reminder: Lorem ipsum</li>
+                    <li class="warning">Reminder: Lorem ipsum</li>
+                </ul>
+            </div>
         </div>
 
         <div id="medication">
-            <div id="contenter">
-                <button onclick="clearAll()">Clear</button>
-                <button>Take</button>
-                <div id="cart">
+            <div id="cart">
 
-                </div>
             </div>
-            <br>
+            <button>Clear</button>
+            <button>Take</button>
+            <br><br>
             <div id="list">
-                <form id="search">
+                <form>
+                    <button>Recent</button>
+                    <button>New</button>
                     <input type="text" placeholder="input medication name">
                     <button>Search</button>
                 </form>
-                <div id="medlist">
-                    <div id="medication1"class="meditem">
-                        <li>medication 1</li>
-                        <div class="button">
-                            <button name="medication1" onclick="add(this)">+</button>
-                            <input name="medication1" class="quantity"  value="234" min="0" maxlength="3" type="number">
-                            <button name="medication1" onclick="minus(this)">-</button>
-                            <button>Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    <li>medication 1</li>
+                    <button>+</button>
+                    <input placeholder="quantity">
+                    <button>-</button>
+                    <li>medication 2</li>
+                    <button>+</button>
+                    <input placeholder="quantity">
+                    <button>-</button>
+                    <li>medication 3</li>
+                    <button>+</button>
+                    <input placeholder="quantity">
+                    <button>-</button>
+                </ul>
             </div>
         </div>
     </div>
     <div class="header">
-        <div id="left"><a href="Dashboard.html" id="logo"><img src="/art/MedMap_logo.png"></a></div>
-        
+        <div id="left">
+          <form>
+            <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+            <button formaction="Dashboard.php" id="logo">MedMap</button>
+          </form>
+        </div>
+
         <div id="right">
             <!--<a href="dropdown.html">
               <img src="art/dropdown.png" height="40px">
             </a>-->
-            <button class="mButton" onclick="showMenu()"><i class="fas fa-angle-double-down"></i></button>
+            <button class="mButton" onclick="showMenu()">-</button>
         </div>
 
     </div>
     <div class="menu" id="menu">
-        <div><a href="Dashboard.html">Dashboard</a></div>
-        <div><a href="Planner.html">Planner</a></div>
-        <div><a href="Item.html">Items</a></div>
-        <div><a href="Setting.html">Settings</a></div>
-        <div><a href="Contact.html">Support</a></div>
-        <div><a href="index.html">Logout</a></div>
-        <button onclick="hideMenu()"><i class="fas fa-angle-double-up"></i></button>
+      <form>
+        <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+        <div><button formaction="Dashboard.php">Dashboard</button></div>
+        <div><button formaction="Planner.php">Planner</button></div>
+        <div><button formaction="Item.php">Items</button></div>
+        <div><button formaction="Setting.php">Settings</button></div>
+        <div><button formaction="Contact.php">Support</button></div>
+        <div><a href="Home.php">Logout</a></div>
+      </form>
+      <button onclick="hideMenu()">X</button>
     </div>
 </body>
 
 <script>
-    function showMenu() {
-        document.getElementById("menu").style.display = "block";
-        return;
-    }
-
-    function hideMenu() {
-        document.getElementById("menu").style.display = "none";
-        return;
-    }
+  function showMenu(){
+    document.getElementById("menu").style.display="block";
+    return;
+  }
+  function hideMenu(){
+    document.getElementById("menu").style.display="none";
+    return;
+  }
 </script>
-
-<script type="text/javascript" src="js/Dashboard.js"></script>
 
 </html>
