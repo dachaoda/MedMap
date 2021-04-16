@@ -12,57 +12,70 @@
 
 <head>
     <title>Dashboard</title>
-    <link rel="stylesheet" href="css/dashboard.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
     <div class="body">
-        <div id="planner" >
-            <a href="planner.html">
-            <div id="calender">
+        <div id="planner">
+            <a href="planner.php">
+                <div id="calender">
+                    <div id="month">
+                        <ul>
+                            <li class="prev"></li>
+                            <li class="next"></li>
+                            <li id="year">August
+                                <br>
+                                <span style="font-size:18px">2021</span>
+                            </li>
+                          </ul>
+                    </div>
 
-            </div>
+                    <ul id="weekdays">
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                        <li>Sun</li>
+
+                    </ul>
+
+                    <ul id="days">
+                        <li id="0">0</li>
+                        <li id="1">1</li>
+                        <li id="2">2</li>
+                        <li id="3">3</li>
+                        <li id="4">4</li>
+                        <li id="5">5</li>
+                        <li id="6">6</li>
+                    </ul>
+
+                </div>
             </a>
-            <div id="alerts">
-                <ul>
-                    <li class="danger"> Alert! Lorem ipsum </li>
-                    <li class="warning">Reminder: Lorem ipsum </li>
-                    <li class="warning">Reminder: Lorem ipsum</li>
-                    <li class="warning">Reminder: Lorem ipsum</li>
-                    <li class="warning">Reminder: Lorem ipsum</li>
-                </ul>
-            </div>
         </div>
 
         <div id="medication">
-            <div id="cart">
+            <div id="contenter">
+                <button onclick="clearAll()">Clear</button>
+                <button>Take</button>
+                <div id="cart">
 
+                </div>
             </div>
-            <button>Clear</button>
-            <button>Take</button>
-            <br><br>
+            <br>
             <div id="list">
-                <form>
-                    <button>Recent</button>
-                    <button>New</button>
+                <form id="search">
                     <input type="text" placeholder="input medication name">
                     <button>Search</button>
                 </form>
-                <ul>
-                    <li>medication 1</li>
-                    <button>+</button>
-                    <input placeholder="quantity">
-                    <button>-</button>
-                    <li>medication 2</li>
-                    <button>+</button>
-                    <input placeholder="quantity">
-                    <button>-</button>
-                    <li>medication 3</li>
-                    <button>+</button>
-                    <input placeholder="quantity">
-                    <button>-</button>
-                </ul>
+                <div id="medlist">
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +83,7 @@
         <div id="left">
           <form>
             <input type="hidden" name="ID" value=<?php echo $id;?>></input>
-            <button formaction="Dashboard.php" id="logo">MedMap</button>
+            <button class="clear" formaction="Dashboard.php" id="logo"><div id="left"><a href="Dashboard.php" id="logo"><img src="art/MedMap_logo.png"></a></div></button>
           </form>
         </div>
 
@@ -106,5 +119,7 @@
     return;
   }
 </script>
+
+<script type="text/javascript" src="js/Dashboard.js"></script>
 
 </html>
