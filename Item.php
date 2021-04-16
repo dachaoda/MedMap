@@ -31,12 +31,12 @@
     <div class="items">
       <?php
         foreach($items as $item){
+          echo '<div class="itemCont"><div class="item"><span style="width: 50px;">' . $item[1] . '</span>';
           echo '<form><input type="hidden" name="ID" value=' . $id . '></input>';
           echo '<input type="hidden" name="upd"></input>';
-          echo '<div class="itemCont"><div class="item"><span style="width: 50px;">' . $item[1] . '</span>';
-          echo '<span><input type="number" name="q" value="' . $item[3] . '" maxlength=4 style="width: 40px;"></input><button name="ItemID" value=' . $item[0] . '>Update</button></span>';
+          echo '<span><input type="number" name="q" value="' . $item[3] . '" maxlength=4 style="width: 40px;"></input><button name="ItemID" value=' . $item[0] . '>Update</button></span></form>';
           echo '<span><button  onclick="info(this)">Info</button></span></div>';
-          echo '</br><div class="description" style="display: none;">' . $item[2] . '</div></div></form>';
+          echo '</br><div class="description" style="display: none;">' . $item[2] . '</div></div>';
         }
       ?>
     </div>
