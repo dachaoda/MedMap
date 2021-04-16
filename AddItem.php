@@ -3,7 +3,7 @@
     $id = $_GET['ID'];
 
     if(isset($_GET['add'])){
-      $db = mysqli_connect('localhost', 'root', '', 'gui');
+      include 'dbconnect.php';
 
       $name = $_GET['name'];
       $quantity = $_GET['quantity'];
@@ -43,7 +43,7 @@
             <input type="textbox" id="nameBox" name="name"></input>
           </span>
           <span>
-            Q:<?php echo $query;?>
+            Q:
             <input type="textbox" id="quantityBox" name="quantity"></input>
           </span>
         </div>

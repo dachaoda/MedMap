@@ -1,6 +1,6 @@
 <?php
   if(isset($_GET['reg'])){
-    $db = mysqli_connect('localhost', 'root', '', 'gui');
+    include 'dbconnect.php';
 
     $email = $_GET['email'];
     $fname = $_GET['fName'];
