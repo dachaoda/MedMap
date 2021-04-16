@@ -47,7 +47,7 @@
         </table>
         <div id="forgot"><a href="Login.php">forgot password?</a></div>
         <div id="loginButton"><button type='submit' href="Login.php" name="log">Login</button></div>
-        <div id="register"><a formaction="Register.php">New? Register Account</a></div>
+        <div id="register"><a href="Register.php">New? Register Account</a></div>
       </form>
     </div>
     <div class="header">

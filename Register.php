@@ -79,7 +79,7 @@
             </td>
           <tr>
         </table>
-        <div id="registerButton"><button type=submit formaction="register.php" name="reg">Register</button></div>
+        <div id="registerButton"><button type=submit formaction="Register.php" name="reg">Register</button></div>
         <div id="login"><a href="Login.php">Already have an account? Login</a></div>
       </form>
     </div>
