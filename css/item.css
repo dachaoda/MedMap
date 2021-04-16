@@ -23,8 +23,7 @@
   padding: 10px;
 }
 
-.toolbar div a, .toolbar div a:visited{
-  text-decoration: none;
+.toolbar form div button, .toolbar form div button:visited{
   color: black;
   font-size: 40px;
 

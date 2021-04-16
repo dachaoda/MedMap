@@ -26,11 +26,18 @@ body {
     padding: 10px;
 }
 
-.header a#logo,
-.header a#logo:visited {
-    text-decoration: none;
-    color: black;
-    font-size: 40px;
+.header div#left form button, .header div#left form button:visited{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+  background-color: white;
+}
+
+.header div#left a, .header div#left a:visited{
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+  background-color: white;
 }
 
 #planner {
@@ -102,15 +109,24 @@ body {
     height:50%;
 }
 
-.menu div, .menu button{
+.menu{
+  padding: 10px;
+}
+
+.menu form div, .menu button {
   font-size: 30px;
-  margin: 10px;
-  width: 150px;
+  margin: 0px;
+  width: 160px;
 
   background-color: white;
   border-style: solid;
   border-color: black;
   border-width: 1px;
+}
+
+.menu form div button, .menu form div button:active, .menu form div a, .menu form div a:active{
+  text-decoration: none;
+  color: black;
 }
 
 .menu div a, .menu div a:active{

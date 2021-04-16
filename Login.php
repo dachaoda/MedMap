@@ -1,3 +1,29 @@
+<?php
+  if(isset($_GET['log'])){
+    $db = mysqli_connect('localhost', 'root', '', 'gui');
+
+    $email = $_GET['email'];
+    $pass = $_GET['password'];
+
+    $query = 'SELECT id, password FROM users WHERE email="' . $email . '";';
+    $result = mysqli_query($db, $query);
+    $logCheck = mysqli_fetch_all($result);
+
+    if(sizeof($logCheck) && password_verify($pass, $logCheck[0][1])){
+      header("Location: Dashboard.php?ID=" . $logCheck[0][0]);
+    }
+    else{
+      header("Location: Login.php");
+    }
+
+  }
+  else{
+
+  }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,16 +42,16 @@
           </tr>
           <tr>
             <td>Password: </td>
-            <td><input class="textBox" name="password" type="text"></input></td>
+            <td><input class="textBox" name="password" type="password"></input></td>
           </tr>
         </table>
-        <div id="forgot"><a href="Login.html">forgot password?</a></div>
-        <div id="loginButton"><a href="Dashboard.html">Login</a></div>
-        <div id="register"><a href="Register.html">New? Register Account</a></div>
+        <div id="forgot"><a href="Login.php">forgot password?</a></div>
+        <div id="loginButton"><button type='submit' href="Login.php" name="log">Login</button></div>
+        <div id="register"><a formaction="Register.php">New? Register Account</a></div>
       </form>
     </div>
     <div class="header">
-      <div id="left"><a href="Home.html" id="logo">MedMap</a></div>
+      <div id="left"><a href="Home.php" id="logo">MedMap</a></div>
       <div id="right">
       </div>
     </div>

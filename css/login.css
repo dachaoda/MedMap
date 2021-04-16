@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.body a, .body a:visited{
+.body a, .body a:visited, .body button, .body button:visited{
   text-decoration: none;
   color: black;
 }

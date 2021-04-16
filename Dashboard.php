@@ -1,3 +1,12 @@
+<?php
+  if(isset($_GET['ID'])){
+    $id = $_GET['ID'];
+  }
+  else{
+    header("Location: index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -58,7 +67,12 @@
         </div>
     </div>
     <div class="header">
-        <div id="left"><a href="Dashboard.html" id="logo">MedMap</a></div>
+        <div id="left">
+          <form>
+            <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+            <button formaction="Dashboard.php" id="logo">MedMap</button>
+          </form>
+        </div>
 
         <div id="right">
             <!--<a href="dropdown.html">
@@ -69,12 +83,15 @@
 
     </div>
     <div class="menu" id="menu">
-      <div><a href="Dashboard.html">Dashboard</a></div>
-      <div><a href="Planner.html">Planner</a></div>
-      <div><a href="Item.html">Items</a></div>
-      <div><a href="Setting.html">Settings</a></div>
-      <div><a href="Contact.html">Support</a></div>
-      <div><a href="Home.html">Logout</a></div>
+      <form>
+        <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+        <div><button formaction="Dashboard.php">Dashboard</button></div>
+        <div><button formaction="Planner.php">Planner</button></div>
+        <div><button formaction="Item.php">Items</button></div>
+        <div><button formaction="Setting.php">Settings</button></div>
+        <div><button formaction="Contact.php">Support</button></div>
+        <div><a href="Home.php">Logout</a></div>
+      </form>
       <button onclick="hideMenu()">X</button>
     </div>
 </body>
