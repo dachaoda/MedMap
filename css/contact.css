@@ -1,0 +1,13 @@
+.body{
+  text-align: center;
+}
+
+.title{
+  font-size: 50px;
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.info{
+  font-size: 30px;
+}

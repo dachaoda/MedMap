@@ -1,0 +1,32 @@
+body{
+  padding-top: 100px;
+}
+
+.nav_clear{
+  border: none;
+  background: transparent;
+}
+
+.bg_1{
+  background: #E63946;
+}
+.bg_2{
+  background: #F1FAEE;
+}
+.bg_3{
+  background: #A8DADC;
+}
+.bg_4{
+  background: #457B9D;
+}
+.bg_5{
+  background: #1D3557;
+}
+
+.fc_1{
+  color: #E63946;
+}
+
+.fc_2{
+  color: #F1FAEE;
+}
