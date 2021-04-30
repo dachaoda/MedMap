@@ -61,7 +61,7 @@
   <div class="container-fluid p-0 mt-2">
     <div class="row">
 
-      <div class="container col-lg ">
+      <div class="container col-xxl col-md-12  ">
 
         <div class="row border border-dark p-4 fc_2 bg_5">
           <div class="col-2 d-flex invisible">
@@ -223,7 +223,7 @@
       </div>
 
 
-      <div class="container border border-dark col-lg-4 bg_5 ms-lg-2">
+      <div class="container border border-dark col-xxl-4 col-lg col-sm-12 bg_5 ms-xxl-2 mt-sm-2 mt-xxl-0">
 
         <div class="d-flex justify-content-center text-light">
           Medication Item
@@ -339,7 +339,7 @@
 
       </div>
 
-      <div class="container border border-dark col-lg-4 bg_5 ms-lg-2">
+      <div class="container border border-dark col-xxl-4 col-lg col-sm-12 bg_5 ms-xxl-2 mt-sm-2 ms-lg-2 ms-xxl-0 mt-xxl-0">
         <div class="d-flex justify-content-center text-light">
           Medication Tracker
         </div>
@@ -373,7 +373,7 @@
                         </div>
                       </div>
 
-                      <div class="col-5 align-self-center ps-0">
+                      <div class="col-4 align-self-center ps-0">
 
                         <div class="input-group input-group-sm">
                           <span class="input-group-text " id="inputGroup-sizing-sm">QTY</span>
