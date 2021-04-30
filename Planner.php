@@ -1,5 +1,30 @@
 <?php
   $id = 'testid';
+  if(isset($_GET['ID'])){
+    include 'dbconnect.php';
+    $id = $_GET['ID'];
+
+    if(isset($_GET['add'])){
+      include 'dbconnect.php';
+    }
+
+    if(true){
+      $email = "testidEvent";
+
+      $create_table = "CREATE TABLE " . $email . " (
+        'event_id' int(11) NOT NULL AUTO_INCREMENT,
+        PRIMARY KEY ('event_id') USING BTREE
+      ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8";
+      
+
+      mysqli_query($db, $create_table);
+
+    }
+
+  }
+  else{
+    header("Location: Planner.php?ID=testid");
+  }
 ?>
 
 
@@ -19,9 +44,12 @@
 <body class="container-fluid bg_3">
   <nav class="navbar navbar-md fixed-top navbar-dark bg_1 border-bottom border-dark">
     <div class="container-fluid">
-      <button class="navbar-brand nav_clear" href="Dashboard.php">
-        <img src="/art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
-      </button>
+      <form>
+        <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+        <button class="navbar-brand nav_clear" formaction="Dashboard.php">
+          <img src="/art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
+        </button>
+      </form>
 
       <button class="navbar-toggler border-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="ToggledropdownVisual()">
@@ -63,83 +91,107 @@
   <div class="container-fluid p-0 mt-2">
     <div class="row">
 
-      <div class="container border border-dark col-lg bg_5">
+      <div class="border border-dark col-lg bg_5">
         Add Event
-        <form class="text-light">
+        <form class="text-light row">
 
-          <div class="mb-3">
+          <div class="mb-3 col-12">
             <label for="eventTitle" class="form-label">Title</label>
             <input type="text" class="form-control" id="eventTitle">
           </div>
 
+          <div class="mb-3 col-6">
+            <label for="eventStartDate" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="eventStartDate">
+          </div>
+
+          <div class="mb-3 col-6">
+            <label for="medicationName" class="form-label">Medication Name</label>
+            <input type="text" class="form-control" id="medicationName">
+            
+          </div>
+
+          <div class="mb-3 col-6" id="eventStartTimeBox">
+            <label for="eventStartTime" class="form-label">Start Time</label>
+            <input type="time" class="form-control" name="eventStartTime" id="eventStartTime" value="00:00:00">
+          </div>
+
+          <div class="mb-3 col-12">
+            <div class="form-checkbox">
+              <input class="form-check-input" type="checkbox" name="checkRepeat" id="checkRepeat" checked="true" onclick="eventcheckRepeat(this)">
+              <label class="form-check-label" for="checkRepeat">
+                Does Not Repeat
+              </label>
+            </div>
+          </div>
+
+          <div class="mb-3 col-6 invisible" id="eventEndDateBox">
+            <label for="eventEndDate" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="eventEndDate">
+          </div>
+
+          <!--CheckBox for Weekdays -->
+          <div class="mb-3 col-7 invisible" id="checkWeekdayBox">
+            <div class="row">
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkMon" id="checkMon">
+                <label class="form-check-label" for="checkMon">
+                  Mon
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkTue" id="checkTue">
+                <label class="form-check-label" for="checkTue">
+                  Tue
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkWed" id="checkWed">
+                <label class="form-check-label" for="checkWed">
+                  Wed
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkThu" id="checkThu">
+                <label class="form-check-label" for="checkThu">
+                  Thu
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkFri" id="checkFri">
+                <label class="form-check-label" for="checkFri">
+                  Fri
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkSat" id="checkSat">
+                <label class="form-check-label" for="checkSat">
+                  Sat
+                </label>
+              </div>
+
+              <div class="form-checkbox col pe-0">
+                <input class="form-check-input" type="checkbox" name="checkSun" id="checkSun">
+                <label class="form-check-label" for="checkSun">
+                  Sun
+                </label>
+              </div>
+            </div>
+
+          </div>
+
+          <!--Description Input-->
           <div class="mb-3">
-            <label for="eventStartTime" class="form-label">Start Date</label>
-            <input type="date" class="form-control" id="eventStartTime">
+            <label for="eventDes" class="form-label">Description</label>
+            <textarea class="form-control" style="height: 175px" col="50" row="5" maxlength="300" id="eventDes" placeholder="Max 300 characters"></textarea>
           </div>
-
-          <div class="mb-3">
-            <label for="eventEndTime" class="form-label">End Date</label>
-            <input type="date" class="form-control" id="eventEndTime">
-          </div>
-
-          <div id="Occurence" class="mb-3">
-            <input class="form-check-input" type="checkbox" value="" id="CheckMonday">
-            <label class="form-check-label" for="CheckMonday">
-              Occurrence
-            </label>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="CheckMonday">
-              <label class="form-check-label" for="CheckMonday">
-                Monday
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Tuesdays
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Wednesday
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Thursday
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Friday
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Saturday
-              </label>
-            </div>
-
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Sunday
-              </label>
-            </div>
-          </div>
-
-
-          <button type="submit" class="btn btn-primary">Submit</button>
+          
+          <button type="submit" name="add" formaction="Planner.php" class="btn btn-primary mb-3">Add Event</button>
         </form>
       </div>
 
@@ -147,6 +199,7 @@
 
         <div class="text-light">
           Event list
+          <button onclick="" class="btn btn-primary mb-3">Remove Event</button>
         </div>
 
       </div>
@@ -163,8 +216,8 @@
   integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
-<script type="text/javascript" src="js/Dashboard.js"></script>
 <script type="text/javascript" src="js/VisualChange.js"></script>
+<script type="text/javascript" src="js/Planner.js"></script>
 
 
 </html>
