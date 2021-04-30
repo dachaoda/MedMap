@@ -17,9 +17,15 @@
 <body class="container-fluid bg_3">
   <nav class="navbar navbar-md fixed-top navbar-dark bg_1 border-bottom border-dark">
     <div class="container-fluid">
-      <button class="navbar-brand nav_clear" href="Dashboard.php">
-        <img src="/art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
-      </button>
+
+
+      <form>
+        <input type="hidden" name="ID" value=<?php echo $id;?>></input>
+        <button class="navbar-brand nav_clear" formaction="Dashboard.php">
+          <img src="/art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
+        </button>
+      </form>
+
 
       <button class="navbar-toggler border-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="ToggledropdownVisual()">
