@@ -1,5 +1,5 @@
 .header{
-  height: 68px;
+  height: 108px;
 }
 
 .toolbar{
@@ -8,13 +8,13 @@
   height: 68px;
   text-align: center;
 
-  top: 68px;
+  top: 108px;
   left: 0px;
 
   border-bottom-style: solid;
   border-width: 1px;
 
-  background-color: white;
+  background-color: #1D3557;
 
   text-align: center;
 }
@@ -25,22 +25,30 @@
 
 .toolbar form div button, .toolbar form div button:visited{
   color: black;
-  font-size: 40px;
-
-  background-color: white;
-
-  border-style: solid;
-  border-color: grey;
-  border-width: 1px;
+  font-size: 30px;
 
   padding-left: 10px;
   padding-right: 10px;
+
+  background-color: inherit;
+  border: 5px solid transparent;
+  border-color: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.5);
+  border-radius: .25rem;
+
+  transition: box-shadow .15s ease-in-out;
+}
+
+.toolbar form div button:focus{
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem;
 }
 
 .items{
   width: 100%;
 
-  padding-top: 136px;
+  padding-top: 176px;
 }
 
 .itemCont{
@@ -50,15 +58,35 @@
   margin-top: 5px;
   margin-bottom: 5px;
   padding-top: 13px;
+
+  background-color: #457B9D;
 }
 
 .item{
   display: flex;
   justify-content: space-around;
-  background-color: white;
+  background-color: inherit;
   padding: 5px;
 
   font-size: 25px;
+}
+
+.item button{
+  background-color: inherit;
+  border: 3px solid transparent;
+  border-color: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.5);
+  border-radius: .25rem;
+
+  margin-left: 8px;
+
+  transition: box-shadow .15s ease-in-out;
+}
+
+.item button:focus{
+  text-decoration: none;
+  outline: 0;
+  box-shadow: 0 0 0 0.15rem;
 }
 
 .description{
