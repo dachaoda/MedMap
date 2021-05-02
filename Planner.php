@@ -244,7 +244,7 @@
 
           <div class="mb-3 col-6">
             <label for="eventStartDate" class="form-label">Start Date</label>
-            <input type="date" class="form-control" id="eventStartDate" name="eventStartDate" 
+            <input type="date" class="form-control" id="eventStartDate" name="eventStartDate" onchange="setMinDate(this)" 
               required>
           </div>
 
@@ -272,7 +272,7 @@
 
           <div class="mb-3 col-6 invisible" id="eventEndDateBox">
             <label for="eventEndDate" class="form-label">End Date</label>
-            <input type="date" class="form-control" id="eventEndDate" name="eventEndDate">
+            <input type="date" class="form-control" id="eventEndDate" name="eventEndDate" >
           </div>
 
           <!--CheckBox for Weekdays -->
@@ -431,7 +431,7 @@
                     ' . $items[$count][1]  .'
                   </div>
     
-                  <form class="col-1 bg_4 ps-xxl-5 ps-sm-2 rounded">
+                  <form class="col-1 bg_4 ps-xxl-4 ps-sm-2 rounded">
                     <input type="hidden" name="ID" value=' . $id .'></input>
                     <input type="hidden" name="DeleteID" value='. $items[$count][0] .'></input>
                     <input type="hidden" name="Page" value=' . $page .'></input>
@@ -445,11 +445,11 @@
                     '. date('h:i:s a', strtotime($items[$count][3])) .'
                   </div>
 
-                  <div class="col-3 bg_4 align-self-center rounded">
+                  <div class="col-2 bg_4 align-self-center rounded">
                   '. date('m/d/Y', strtotime($items[$count][4])).' - ' .  date('m/d/Y', strtotime($items[$count][5])) .'
                   </div>
 
-                  <div class="col-2 bg_4  rounded">
+                  <div class="col-3 bg_4  rounded">
                     Medication
                     <button type="button" class="btn fc_2" data-bs-toggle="popover" title="Medication Name:"
                       data-bs-content=
