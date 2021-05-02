@@ -521,7 +521,7 @@
                   echo '<li class="page-item active"><button name="Page" value="'. $page.'" class="page-link rounded-start" href="#">'. $page .'</button></li>';
                   
 
-                  if ($page == $y) {
+                  if ($page == $y || $y == 0) {
                     echo '<li class="page-item disabled"><button name="Page" value="'. ($page + 1).'" class="page-link rounded-start" href="#">Next</button></li>';
                   }else {
                     echo '<li class="page-item "><button name="Page" value="'. ($page + 1).'" class="page-link rounded-start" href="#">'. $page + 1 .'</button></li>';
