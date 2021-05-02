@@ -26,10 +26,14 @@
 }
 
 .form-r1 span:nth-child(-n + 1){
-  padding-right: 100px;
+  padding-right: 20px;
 }
 
 .form-r1 span input#quantityBox{
+  width: 40px;
+}
+
+.form-r1 span input#unitBox{
   width: 40px;
 }
 

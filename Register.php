@@ -14,7 +14,7 @@
     $UMPass = False;
     $EmailUsed = False;
 
-    if($pass != $cpass) $UMPass = True;
+    if($pass != $cpass || empty($pass)) $UMPass = True;
 
     $query = 'SELECT email FROM users WHERE email ="' . $email . '";';
     $result = mysqli_query($db, $query);
@@ -31,11 +31,15 @@
         `name` varchar(255) NOT NULL,
         `description` varchar(255) NOT NULL,
         `quantity` varchar(255) NOT NULL,
+        `units` varchar(20) NOT NULL,
         PRIMARY KEY (`item_id`) USING BTREE
       ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8";
 
       mysqli_query($db, $create_table);
-      header("Location: index.php");
+      header("Location: Login.php?success=");
+    }
+    else{
+      header("Location: Register.php?fail=");
     }
 
   }
@@ -77,7 +81,12 @@
               D<input class="textBox" id="two" name="dayBirth" type="text" maxlength="2" required></input>
               Y<input class="textBox" id="four" name="yearBirth" type="text" maxlength="4" required></input>
             </td>
-          <tr>
+          </tr>
+          <?php
+            if(isset($_GET['fail'])){
+              print '<tr><td colspan=4 style="text-align: center;">Registration Failed</td></tr>';
+            }
+          ?>
         </table>
         <div id="registerButton"><button type=submit formaction="Register.php" name="reg">Register</button></div>
         <div id="login"><a href="Login.php">Already have an account? Login</a></div>

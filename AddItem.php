@@ -8,11 +8,12 @@
       $name = $_GET['name'];
       $quantity = $_GET['quantity'];
       $description = $_GET['description'];
+      $unit = $_GET['unit'];
 
       $query = 'SELECT email FROM users WHERE id=' . $id . ';';
       $email = mysqli_fetch_array(mysqli_query($db, $query))[0];
 
-      $query = 'INSERT INTO `' . $email . '`(name, description, quantity) VALUES("' . $name . '", "' . $description . '", ' . $quantity . ');';
+      $query = 'INSERT INTO `' . $email . '`(name, description, quantity, units) VALUES("' . $name . '", "' . $description . '", ' . $quantity . ', "' . $unit . '");';
       mysqli_query($db, $query);
 
       header("Location: AddItem.php?ID=" . $id);
@@ -44,8 +45,10 @@
             <input type="textbox" id="nameBox" name="name"></input>
           </span>
           <span>
-            Q:
+            Quantity:
             <input type="textbox" id="quantityBox" name="quantity"></input>
+            Units:
+            <input type="textbox" id="unitBox" name="unit"></input>
           </span>
         </div>
         <div class="form-descr">

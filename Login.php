@@ -13,7 +13,7 @@
       header("Location: Dashboard.php?ID=" . $logCheck[0][0]);
     }
     else{
-      header("Location: Login.php");
+      header("Location: Login.php?fail=");
     }
 
   }
@@ -44,8 +44,16 @@
             <td>Password: </td>
             <td><input class="textBox" name="password" type="password"></input></td>
           </tr>
+          <?php
+            if(isset($_GET['fail'])){
+              print '<tr><td colspan=4 style="text-align: center;">Login Failed</td></tr>';
+            }
+            elseif(isset($_GET['success'])){
+              print '<tr><td colspan=4 style="text-align: center;">Registration Successful</td></tr>';
+            }
+          ?>
         </table>
-        <div id="forgot"><a href="Login.php">forgot password?</a></div>
+        <!--div id="forgot"><a href="Login.php">forgot password?</a></div-->
         <div id="loginButton"><button type='submit' href="Login.php" name="log">Login</button></div>
         <div id="register"><a href="Register.php">New? Register Account</a></div>
       </form>

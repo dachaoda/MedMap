@@ -7,12 +7,18 @@
     $email = mysqli_fetch_array(mysqli_query($db, $query))[0];
 
     if(isset($_GET['upd'])){
-      $query1 = 'UPDATE `' . $email . '` SET quantity = ' . $_GET['q'] . ' WHERE item_id=' . $_GET['ItemID'] . ';';
-      mysqli_query($db, $query1);
-      header("Location: Item.php?ID=" . $id);
+
+      if(empty($_GET['q']) || intval($_GET['q']) < 0){
+        header("Location: Item.php?ID=" . $id . '&fail=');
+      }
+      else{
+        $query1 = 'UPDATE `' . $email . '` SET quantity = ' . $_GET['q'] . ' WHERE item_id=' . $_GET['ItemID'] . ';';
+        mysqli_query($db, $query1);
+        header("Location: Item.php?ID=" . $id . '&success=' . intval($_GET['q']));
+      }
     }
 
-    $query = 'SELECT item_id, name, description, quantity FROM `' . $email . '` ORDER BY name;';
+    $query = 'SELECT item_id, name, description, quantity, units FROM `' . $email . '` ORDER BY name;';
     $items = mysqli_fetch_all(mysqli_query($db, $query));
   }
   else{
@@ -36,9 +42,15 @@
           echo '<div class="itemCont"><div class="item"><span style="width: 50px;">' . $item[1] . '</span>';
           echo '<form><input type="hidden" name="ID" value=' . $id . '></input>';
           echo '<input type="hidden" name="upd"></input>';
-          echo '<span><input type="number" name="q" value="' . $item[3] . '" maxlength=4 style="width: 40px;"></input><button name="ItemID" value=' . $item[0] . '>Update</button></span></form>';
+          echo '<span><input type="number" name="q" value="' . $item[3] . '" maxlength=4 style="width: 40px;"></input><span style="font-size: 18px;"> ' . $item[4] . ' </span><button name="ItemID" value=' . $item[0] . '>Update</button></span></form>';
           echo '<span><button  onclick="info(this)">Info</button></span></div>';
-          echo '</br><div class="description" style="display: none;">' . $item[2] . '</div></div>';
+          if(isset($_GET['success'])){
+            echo '</br><div style="text-align: center;">Update Successful</div>';
+          }
+          elseif(isset($_GET['fail'])){
+            echo '</br><div style="text-align: center;">Update Failed</div>';
+          }
+          echo '</br><div id="descr" class="description" style="display: none;">' . $item[2] . '</div></div>';
         }
       ?>
     </div>
@@ -108,7 +120,9 @@
       return;
     }
     function info(e){
-      e = e.parentElement.parentElement.parentElement.children[2];
+      //e = e.parentElement.parentElement.parentElement.children[2];
+      e = document.getElementById("descr");
+
       if(e.style.display == "none"){
         e.style = "display: visible;";
       }
