@@ -52,15 +52,22 @@ function checkWeekdays(){
 
     if(!(repeat.checked)){
         if(Mon || Tue || Wed || Thu || Fri || Sat || Sun){
-            return true;
             weekday.setCustomValidity('');
             weekday.reportValidity(true);
+            return true;  
+
+        }else{
+            weekday.setCustomValidity('Must Select At Least One Day for Reoccurrence');
+            weekday.reportValidity(false);
+            return false;
         }
-        weekday.setCustomValidity('Must Select At Least One Day for Reoccurrence');
-        weekday.reportValidity(false);
-        return false;
+
     }
     return true;  
+}
+
+function setMinDate(input){
+    document.getElementById("eventEndDate").min = input.value;
 }
 
 
