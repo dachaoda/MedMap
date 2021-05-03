@@ -44,6 +44,9 @@
 
 <head>
     <title>Setting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
     <link rel="stylesheet" href="css/all.css"> <!--font awesome-->
     <!--link rel="stylesheet" href="css/setting.css"-->
     <link rel="stylesheet" href="css/general.css">
@@ -105,8 +108,8 @@
               <button formaction="Item.php">Medications</button>
             </li>
             <li>
-              <i class="fas fa-cogs fa-2x"></i>
-              <button formaction="Setting.php">Settings</button>
+              <i class="fas fa-cogs fa-2x text-light"></i>
+              <button class="text-light"formaction="Setting.php">Settings</button>
             </li>
             <li>
               <i class="far fa-id-card fa-2x"></i>
@@ -114,7 +117,7 @@
             </li>
             <li>
               <i class="fas fa-sign-out-alt fa-2x"></i>
-              <a href="Home.php">Logout</a>
+              <a href="logout.php?ID=<?php echo $id;?>">Logout</a>
             </li>
           </form>
         </div>
@@ -139,5 +142,6 @@
     return;
   }
 </script>
+<script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
 
 </html>

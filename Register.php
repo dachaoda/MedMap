@@ -100,4 +100,5 @@
       </div>
     </div>
   </body>
+  <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
 </html>

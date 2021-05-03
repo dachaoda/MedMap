@@ -1,5 +1,4 @@
 <?php
-  $id = 'testid';
   if(isset($_GET['ID'])){
     include 'dbconnect.php';
     $id = $_GET['ID'];
@@ -20,7 +19,6 @@
     //update event sql
     if(isset($_GET['add'])){
       $debug ='AddEvent';
-
 
       $name = ($_GET['ID']) . 'event';      
       $title = $_GET['eventTitle'];
@@ -157,6 +155,8 @@
     DELETE FROM testidevent WHERE event_id = "20"
     */
 
+  }else{
+    header("Location: index.php");
   }
   
 ?>
@@ -166,7 +166,7 @@
 <html>
 
 <head>
-  <title>Dashboard</title>
+  <title>Planner</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -181,7 +181,7 @@
       <form>
         <input type="hidden" name="ID" value=<?php echo $id;?>></input>
         <button class="navbar-brand nav_clear" formaction="Dashboard.php">
-          <img src="/art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
+          <img src="art/MedMap_Logo.png" alt="" Width="100" height="80" class="d-inline-block align-text-top">
         </button>
       </form>
 
@@ -215,7 +215,7 @@
           </li>
           <li class="nav-item d-flex justify-content-end">
             <i class="fas fa-sign-out-alt fa-2x align-self-center pt-1 px-1"></i>
-            <button class="nav-link nav_clear fs-5" formaction="Home.php">Logout</button>
+            <button class="nav-link nav_clear fs-5" formaction="logout.php">Logout</button>
           </li>
         </form>
       </div>

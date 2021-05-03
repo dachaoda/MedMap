@@ -30,6 +30,7 @@
 <html>
   <head>
     <title>Items</title>
+
     <link rel="stylesheet" href="css/all.css"> <!--font awesome-->
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/item.css">
@@ -84,8 +85,8 @@
               <button formaction="Planner.php">Planner</button>
             </li>
             <li>
-              <i class="fas fa-pills fa-2x"></i>
-              <button formaction="Item.php">Medications</button>
+              <i class="fas fa-pills fa-2x text-light"></i>
+              <button class="text-light" formaction="Item.php">Medications</button>
             </li>
             <li>
               <i class="fas fa-cogs fa-2x"></i>
@@ -97,7 +98,7 @@
             </li>
             <li>
               <i class="fas fa-sign-out-alt fa-2x"></i>
-              <a href="Home.php">Logout</a>
+              <a href="logout.php?ID=<?php echo $id;?>">Logout</a>
             </li>
           </form>
         </div>
@@ -134,4 +135,8 @@
     }
 
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/55588c0c96.js" crossorigin="anonymous"></script>
 </html>

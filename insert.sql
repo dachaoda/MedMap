@@ -13,3 +13,32 @@ CREATE TABLE `users`(
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+
+      
+/*
+
+        INSERT INTO users ( 
+        email,
+        password,
+        first_name,
+        last_name,
+        bday,
+        bmonth,
+        byear) VALUES(
+          'testid',
+          'TestF',
+          'TestL',
+          '14',
+          '12',
+          '1445'
+        )
+
+
+        INSERT INTO users ( 
+        email
+        ) VALUES (
+          'testid'
+        )
+ 
+*/
