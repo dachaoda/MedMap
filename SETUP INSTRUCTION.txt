@@ -1,0 +1,5 @@
+To set up MedMap
+
+Create a new database on sql
+Run 'Insert.sql' to set up the baseline database for the website
+After that you should be good to host MedMap
