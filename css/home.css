@@ -36,6 +36,7 @@
 }
 
 .panel{
+
   border-style: solid;
   border-color: grey;
   border-width: 1px;
@@ -43,7 +44,14 @@
   height: 63vh;
   width: 450px;
 
-  background: lightgrey;
+  background: #457B9D;
 
   overflow-y: auto;
+
+  padding: 10px;
+}
+
+.panel li{
+  padding-bottom: 20px;
+  font-size: 20px;
 }
